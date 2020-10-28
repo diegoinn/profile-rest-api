@@ -45,10 +45,10 @@ class ConstructionSystemsViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name_construction_system', )
 
-class MaterialsViewSet(viewsets.ModelViewSet):
+class MaterialSchemeProjectViewSet(viewsets.ModelViewSet):
     """Handle creating and updating materials"""
-    serializer_class = serializers.MaterialsSerializer
-    queryset = models.Material.objects.all()
+    serializer_class = serializers.MaterialSchemeProjectSerializer
+    queryset = models.MaterialSchemeProject.objects.all()
     #authentication_classes = (TokenAuthentication,)
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name_material', )

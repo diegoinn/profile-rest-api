@@ -9,7 +9,7 @@ router.register('projects', views.ProjectsViewSet)
 router.register('sections', views.SectionsViewSet)
 router.register('origin', views.OriginsViewSet)
 router.register('construction-system', views.ConstructionSystemsViewSet)
-router.register('materials-project', views.MaterialsViewSet)
+router.register('material-scheme-project', views.MaterialSchemeProjectViewSet)
 
 urlpatterns = [
     path('', include(router.urls))

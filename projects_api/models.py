@@ -40,11 +40,13 @@ class ConstructionSystem(models.Model):
         return self.name_construction_system
 
 
-class Material(models.Model):
-    """Material model"""
+class MaterialSchemeProject(models.Model):
+    """MaterialSchemeProject model"""
     name_material = models.CharField(max_length=255)
     project_id = models.ForeignKey(Project, on_delete=models.DO_NOTHING)
     origin_id = models.ForeignKey(Origin, on_delete=models.DO_NOTHING)
+    quantity = models.IntegerField()
+    unit = models.IntegerField()
     construction_system_id = models.ForeignKey(ConstructionSystem, on_delete=models.DO_NOTHING)
 
     def __str__(self):

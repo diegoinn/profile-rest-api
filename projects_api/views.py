@@ -21,6 +21,15 @@ class ProjectsViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name_project',)
 
+class MaterialsViewSet(viewsets.ModelViewSet):
+    """Handle creating and updating materials"""
+    serializer_class = serializers.MaterialsSerializer
+    queryset = models.Material.objects.all()
+    #authentication_classes = (TokenAuthentication,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name_material', )
+
+
 class SectionsViewSet(viewsets.ModelViewSet):
     """Handle creating and updating sections"""
     serializer_class = serializers.SectionsSerializer
@@ -45,10 +54,42 @@ class ConstructionSystemsViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name_construction_system', )
 
+class UnitsViewSet(viewsets.ModelViewSet):
+    """Handle creating and updating units"""
+    serializer_class = serializers.UnitsSerializer
+    queryset = models.Unit.objects.all()
+    #authentication_classes = (TokenAuthentication,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name_unit', )
+
+class StandardsViewSet(viewsets.ModelViewSet):
+    """Handle creating and updating standards"""
+    serializer_class = serializers.StandardsSerializer
+    queryset = models.Standard.objects.all()
+    #authentication_classes = (TokenAuthentication,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name_standard', )
+
+class PotentialTypesViewSet(viewsets.ModelViewSet):
+    """Handle creating and updating potential types"""
+    serializer_class = serializers.PotentialTypesSerializer
+    queryset = models.PotentialType.objects.all()
+    #authentication_classes = (TokenAuthentication,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name_potential_type', )
+
 class MaterialSchemeProjectViewSet(viewsets.ModelViewSet):
     """Handle creating and updating materials"""
     serializer_class = serializers.MaterialSchemeProjectSerializer
     queryset = models.MaterialSchemeProject.objects.all()
     #authentication_classes = (TokenAuthentication,)
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('name_material', )
+    search_fields = ('material_id', )
+
+class MaterialSchemeDataViewSet(viewsets.ModelViewSet):
+    """Handle creating and updating material scheme data"""
+    serializer_class = serializers.MaterialSchemeDataSerializer
+    queryset = models.MaterialSchemeData.objects.all()
+    #authentication_classes = (TokenAuthentication,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('value', )

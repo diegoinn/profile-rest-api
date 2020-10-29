@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '25&!(c13l4!5kwt_9(#uh1bd&^@je)im*iw0$@seh3lrox%zw)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost:8000",
+    "evamed-rest-api-test.herokuapp.com"
+]
 
 
 # Application definition
